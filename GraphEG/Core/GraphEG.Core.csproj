@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7E50BAE2-110C-48AA-B77E-77A178165C1F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GraphEG.Core</RootNamespace>
+    <AssemblyName>GraphEG.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="QuikGraph, Version=2.5.0.0, Culture=neutral, PublicKeyToken=46bd58b0789759cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\QuikGraph.2.5.0\lib\net45\QuikGraph.dll</HintPath>
+    </Reference>
+    <Reference Include="QuikGraph.Graphviz, Version=2.5.0.0, Culture=neutral, PublicKeyToken=46bd58b0789759cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\QuikGraph.Graphviz.2.5.0\lib\net45\QuikGraph.Graphviz.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CombinationExtension.cs" />
+    <Compile Include="DynamicGraph\Actions\ExecutionResultBuilder.cs" />
+    <Compile Include="DynamicGraph\Actions\Generator\ActionGenerator.cs" />
+    <Compile Include="DynamicGraph\Actions\Generator\ActionGeneratorBuilder.cs" />
+    <Compile Include="DynamicGraph\Actions\Generator\ActionGeneratorBuildingEventArgs.cs" />
+    <Compile Include="DynamicGraph\Actions\Generator\AttemptActionGenerator.cs" />
+    <Compile Include="DynamicGraph\Actions\Generator\ClueActionGenerator.cs" />
+    <Compile Include="DynamicGraph\Actions\Generator\EnterActionGenerator.cs" />
+    <Compile Include="DynamicGraph\Actions\Generator\MainActionGenerator.cs" />
+    <Compile Include="DynamicGraph\Actions\Attempt.cs" />
+    <Compile Include="DynamicGraph\Actions\Drop.cs" />
+    <Compile Include="DynamicGraph\Actions\Enter.cs" />
+    <Compile Include="DynamicGraph\Actions\Generator\MoveActionGenerator.cs" />
+    <Compile Include="DynamicGraph\Actions\Generator\SearchActionGenerator.cs" />
+    <Compile Include="DynamicGraph\Actions\MaxCouplingFinder.cs" />
+    <Compile Include="DynamicGraph\Actions\Memorize.cs" />
+    <Compile Include="DynamicGraph\Actions\Move.cs" />
+    <Compile Include="DynamicGraph\Actions\PickUp.cs" />
+    <Compile Include="DynamicGraph\Actions\Search.cs" />
+    <Compile Include="DynamicGraph\Actions\PlayerAction.cs" />
+    <Compile Include="DynamicGraph\Actions\PlayerActionSet.cs" />
+    <Compile Include="DynamicGraph\Edges\Carries.cs" />
+    <Compile Include="DynamicGraph\Edges\Contains.cs" />
+    <Compile Include="DynamicGraph\Edges\DynamicEdge.cs" />
+    <Compile Include="DynamicGraph\Edges\DynamicEdgeSet.cs" />
+    <Compile Include="DynamicGraph\DynamicGraph.cs" />
+    <Compile Include="DynamicGraph\DynamicGraphExplorer.cs" />
+    <Compile Include="DynamicGraph\Edges\Knows.cs" />
+    <Compile Include="DynamicGraph\Edges\LeadsTo.cs" />
+    <Compile Include="DynamicGraph\Player.cs" />
+    <Compile Include="DynamicGraph\Edges\Possesses.cs" />
+    <Compile Include="Graph\Edge.cs" />
+    <Compile Include="Graph\EdgeSet.cs" />
+    <Compile Include="Graph\Graph.cs" />
+    <Compile Include="Graph\GraphItem.cs" />
+    <Compile Include="Graph\BinaryGraphLoader.cs" />
+    <Compile Include="Graph\BinaryGraphSaver.cs" />
+    <Compile Include="Graph\Node.cs" />
+    <Compile Include="Graph\GraphItemSet.cs" />
+    <Compile Include="Graph\NodeSet.cs" />
+    <Compile Include="NameGenerator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Public Interface\DynamicGraph\DynamicEdges.cs" />
+    <Compile Include="Public Interface\DynamicGraph\IActionGenerator.cs" />
+    <Compile Include="Public Interface\DynamicGraph\IDynamicEdge.cs" />
+    <Compile Include="Public Interface\DynamicGraph\IDynamicEdgeSet.cs" />
+    <Compile Include="Public Interface\DynamicGraph\IDynamicGraph.cs" />
+    <Compile Include="Public Interface\DynamicGraph\IPlayer.cs" />
+    <Compile Include="Public Interface\DynamicGraph\IPlayerAction.cs" />
+    <Compile Include="Public Interface\DynamicGraph\IPlayerActionSet.cs" />
+    <Compile Include="Public Interface\Graph\IEdge.cs" />
+    <Compile Include="Public Interface\Graph\IEdgeSet.cs" />
+    <Compile Include="Public Interface\Graph\IGraph.cs" />
+    <Compile Include="Public Interface\Graph\IGraphItem.cs" />
+    <Compile Include="Public Interface\Graph\IGraphItemSet.cs" />
+    <Compile Include="Public Interface\Graph\INode.cs" />
+    <Compile Include="Public Interface\Graph\INodeSet.cs" />
+    <Compile Include="Public Interface\StaticGraph\IStaticGraph.cs" />
+    <Compile Include="Public Interface\StaticGraph\StaticEdges.cs" />
+    <Compile Include="Public Interface\StaticGraph\StaticEdgeSets.cs" />
+    <Compile Include="StaticGraph\StaticGraphExplorer.cs" />
+    <Compile Include="Public Interface\StaticGraph\StaticNodes.cs" />
+    <Compile Include="Public Interface\StaticGraph\StaticNodeSets.cs" />
+    <Compile Include="StaticGraph\Edges\Door.cs" />
+    <Compile Include="StaticGraph\Edges\MetaLink.cs" />
+    <Compile Include="StaticGraph\Edges\PuzzleLocation.cs" />
+    <Compile Include="StaticGraph\Edges\Sets.cs" />
+    <Compile Include="StaticGraph\Edges\StaticGraphEdge.cs" />
+    <Compile Include="StaticGraph\Meta\MetaExit.cs" />
+    <Compile Include="StaticGraph\Meta\MetaFunction.cs" />
+    <Compile Include="StaticGraph\Meta\MetaVictory.cs" />
+    <Compile Include="StaticGraph\Nodes\Clue.cs" />
+    <Compile Include="StaticGraph\Nodes\Meta.cs" />
+    <Compile Include="StaticGraph\Nodes\Puzzle.cs" />
+    <Compile Include="StaticGraph\Nodes\Role.cs" />
+    <Compile Include="StaticGraph\Nodes\Room.cs" />
+    <Compile Include="StaticGraph\Nodes\Sets.cs" />
+    <Compile Include="StaticGraph\Nodes\Skill.cs" />
+    <Compile Include="StaticGraph\Edges\PuzzleRewardsRoom.cs" />
+    <Compile Include="StaticGraph\Edges\PuzzleRewardsClue.cs" />
+    <Compile Include="StaticGraph\Edges\PuzzleRewardsPuzzle.cs" />
+    <Compile Include="StaticGraph\Edges\PuzzleRole.cs" />
+    <Compile Include="StaticGraph\Edges\RequiredClue.cs" />
+    <Compile Include="StaticGraph\Edges\RequiredSkill.cs" />
+    <Compile Include="StaticGraph\Edges\ClueLocation.cs" />
+    <Compile Include="StaticGraph\Edges\RoleLocation.cs" />
+    <Compile Include="StaticGraph\Edges\StartingPosition.cs" />
+    <Compile Include="StaticGraph\StaticGraph.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
