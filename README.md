@@ -1,5 +1,5 @@
 # GraphEG
-This software implements a graph-based representation of Escape Games. It is a companion artifact for the paper "Formalizing Escape Game Mechanics: A Graph-Theoretical Framework for Modeling and Analyzing Puzzle-Based Environments"
+The GraphEG software implements a graph-based representation of Escape Games. It is a companion artifact for the paper "Formalizing Escape Game Mechanics: A Graph-Theoretical Framework for Modeling and Analyzing Puzzle-Based Environments"
 
 ## Installation
 To run the application, you first have to install :
@@ -7,7 +7,7 @@ To run the application, you first have to install :
 - [GraphViz](https://graphviz.org/download/#windows)
 - Git
 
-Once the installation is done, just compile the code and the GraphEG tool will open.
+Once the installation is done, just compile the code and GraphEG will launch.
 
 ## Usage
 There are 2 main interfaces, the Designer and the Game itself.
